@@ -79,7 +79,7 @@ if (userPasswordForm) {
     const passwordConfirm = document.getElementById('password-confirm').value;
     await updateSettings({ passwordCurrent, password, passwordConfirm }, 'password');
 
-    document.querySelector('.btn--save-password').textContent = 'Şifre Kaydet';
+    document.querySelector('.btn--save-password').textContent = 'Şifreyi Güncelle';
 
     document.getElementById('password-current').value = '';
     document.getElementById('password').value = '';

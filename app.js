@@ -152,7 +152,7 @@ app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/bookings', bookingRouter);
 
 app.all('*', (req, res, next) => {
-  next(new AppError(`Bu serverda ${req.originalUrl} isminde bir yer bulamadık!`, 404));
+  next(new AppError(`Bu server'da '${req.originalUrl}' isminde bir yer bulamadık!`, 404));
 });
 
 app.use(globalErrorHandler);
