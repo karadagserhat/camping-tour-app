@@ -6,7 +6,7 @@ const AppError = require('../utils/appError');
 
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
-  if (alert === 'booking') res.locals.alert = 'Your booking was successful!';
+  if (alert === 'booking') res.locals.alert = 'Satın alma başarılı!';
   next();
 };
 
@@ -17,7 +17,7 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   // 2) Build template
   // 3) Render that template using tour data from 1)
   res.status(200).render('overview', {
-    title: 'All Tours',
+    title: 'Bütün Turlar',
     tours,
   });
 });
@@ -27,7 +27,7 @@ exports.getTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findOne({ slug: req.params.slug });
 
   if (!tour) {
-    return next(new AppError('There is no tour with that name.', 404));
+    return next(new AppError('Böyle bir isimde bir tur bulunmamaktadır.', 404));
   }
 
   // 2) Build template
@@ -46,7 +46,7 @@ exports.getTour = catchAsync(async (req, res, next) => {
 
 exports.getLoginForm = (req, res) => {
   res.status(200).render('login', {
-    title: 'Log into your account',
+    title: 'Hesabınıza giriş yapın',
   });
 };
 
@@ -58,7 +58,7 @@ exports.getSignupForm = (req, res) => {
 
 exports.getAccount = (req, res) => {
   res.status(200).render('account', {
-    title: 'Your account',
+    title: 'Hesap Bilgilerin',
   });
 };
 
@@ -72,7 +72,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
   const tours = await Tour.find({ _id: { $in: tourIDs } });
 
   res.status(200).render('overview', {
-    title: 'My Tour',
+    title: 'Turlarım',
     tours,
   });
 });

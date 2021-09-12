@@ -14,7 +14,7 @@ export const login = async (email, password) => {
     });
 
     if (res.data.status === 'success') {
-      showAlert('success', 'Giriş başarılı!');
+      showAlert('success', 'Giriş Başarılı!');
       window.setTimeout(() => {
         location.assign('/');
       }, 1500);
@@ -34,6 +34,6 @@ export const logout = async () => {
     if (res.data.status === 'success') location.assign('/');
   } catch (err) {
     console.log(err.response);
-    showAlert('error', 'Error logging out! Try again.');
+    showAlert('error', 'Çıkış yaprken hata çıktı. Lütfen tekrar deneyiniz!');
   }
 };

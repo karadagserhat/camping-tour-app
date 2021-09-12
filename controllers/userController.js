@@ -12,7 +12,7 @@ const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
     cb(null, true);
   } else {
-    cb(new AppError('Not an image! Please upload only images.', 400), false);
+    cb(new AppError('Resim değil! Lütfen sadece resim yükleyiniz!', 400), false);
   }
 };
 
@@ -63,7 +63,7 @@ exports.getMe = (req, res, next) => {
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1) Create error if user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
-    return next(new AppError('This route is not for password updates. Please use /updateMyPassword', 400));
+    return next(new AppError('Bu rota şifre güncellemek için değil. Lütfen bunu kullanın -> /updateMyPassword', 400));
   }
 
   // 2) Filtered out unwanted fields names that are not allowed to be updated
@@ -103,7 +103,7 @@ exports.getUser = factory.getOne(User);
 exports.createUser = (req, res) => {
   res.status(500).json({
     status: 'error',
-    message: 'This route is not defined! Please use /signup instead',
+    message: 'Bu rota henüz tanımlanmadı! Lütfen bunu kullanın -> /signup',
   });
 };
 

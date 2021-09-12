@@ -64,7 +64,7 @@ if (userDataForm) {
 
     await updateSettings(form, 'data');
 
-    document.querySelector('.btn--save-settings').textContent = 'Kaydet';
+    document.querySelector('.btn--save-settings').textContent = 'Bilgileri Güncelle';
 
     location.reload();
     // const name = document.getElementById('name').value;
@@ -93,7 +93,7 @@ if (userPasswordForm) {
 
 if (bookBtn)
   bookBtn.addEventListener('click', (e) => {
-    e.target.textContent = 'Processing...';
+    e.target.textContent = 'İşleniyor...';
     const { tourId } = e.target.dataset;
     bookTour(tourId);
   });
