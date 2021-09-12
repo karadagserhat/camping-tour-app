@@ -6,7 +6,14 @@ const bcrypt = require('bcryptjs');
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
+    trim: true,
     required: [true, 'Lütfen isminizi giriniz!'],
+    validate: {
+      validator: function (value) {
+        return validator.isAlpha(value.split(' ').join(''));
+      },
+      message: 'Kullanıcı isminizi doğru giriniz lütfen!.',
+    },
   },
   email: {
     type: String,
