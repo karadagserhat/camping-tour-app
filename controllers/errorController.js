@@ -13,7 +13,7 @@ const handleDuplicateFieldsDB = (err) => {
 
 const handleValidationErrorDB = (err) => {
   const errors = Object.values(err.errors).map((el) => el.message);
-  const message = `Geçersiz veri. ${errors.join('. ')}`;
+  const message = `Geçersiz veri. ${errors.join(' ')}`;
   return new AppError(message, 400);
 };
 

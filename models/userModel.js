@@ -7,20 +7,20 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: [true, 'Lütfen isminiziiiii giriniz.'],
+    required: [true, 'Lütfen isminizi giriniz!'],
     validate: {
       validator: function (value) {
         return value !== '';
       },
-      message: 'Kullanıcı isminizi doğru giriniz lütfen.',
+      message: 'Kullanıcı isminizi doğru giriniz lütfen!',
     },
   },
   email: {
     type: String,
-    required: [true, 'Lütfen email adresinizi giriniz.'],
+    required: [true, 'Lütfen email adresinizi giriniz!'],
     unique: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Lütfen geçerli bir email giriniz.'],
+    validate: [validator.isEmail, 'Lütfen geçerli bir email giriniz!'],
   },
   photo: {
     type: String,
@@ -33,19 +33,19 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, 'Lütfen bir şifre giriniz.'],
+    required: [true, 'Lütfen bir şifre giriniz!'],
     minlength: 6,
     select: false,
   },
   passwordConfirm: {
     type: String,
-    required: [true, 'Lütfen şifrenizi doğrulayınız.'],
+    required: [true, 'Lütfen şifrenizi doğrulayınız!'],
     validate: {
       // This only works on CREATE and SAVE!!!
       validator: function (el) {
         return el === this.password;
       },
-      message: 'Şifreler eşleşmiyor.',
+      message: 'Şifreler eşleşmiyor!',
     },
   },
   passwordChangedAt: {
