@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
       validator: function (value) {
         return validator.isAlpha(value.split(' ').join(''));
       },
-      message: 'Kullanıcı isminizi doğru giriniz lütfen!.',
+      message: 'Kullanıcı isminizi doğru giriniz lütfen!',
     },
   },
   email: {
