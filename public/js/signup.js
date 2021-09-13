@@ -19,7 +19,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
       showAlert('success', 'Kayıt Başarıyla Oluşturuldu!');
       window.setTimeout(() => {
         location.assign('/');
-      }, 1500);
+      }, 1000);
     }
   } catch (err) {
     showAlert('error', err.response.data.message);
