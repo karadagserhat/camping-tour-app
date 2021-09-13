@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Lütfen isminizi giriniz!'],
     validate: {
       validator: function (value) {
-        return validator.isAlpha(value.split(' ').join(''));
+        return value !== '';
       },
       message: 'Kullanıcı isminizi doğru giriniz lütfen!',
     },
