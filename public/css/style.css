@@ -909,6 +909,13 @@ body {
   margin-bottom: 2.5rem;
 }
 
+.form--log--reg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .form__label {
   display: block;
   font-size: 1.6rem;
@@ -924,6 +931,18 @@ body {
   -ms-flex-align: center;
   align-items: center;
   font-size: 1.6rem;
+}
+
+.form--login__reg {
+  font-family: inherit;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #e67e22;
+  margin-bottom: -0.5rem;
+}
+
+.form--login__btn {
+  margin-left: -2.5rem;
 }
 
 .form__user-photo {

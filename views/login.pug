@@ -11,5 +11,6 @@ block content
         .form__group.ma-bt-md
           label.form__label(for='password') Şifre
           input#password.form__input(type='password', placeholder='••••••••', required, minlength='6')
-        .form__group
-          button.btn.btn--green Giriş
+        .form__group.form--log--reg
+          button.btn.btn--green.form--login__btn Giriş
+          a.form--login__reg(href='/signup') Hesabınız yok mu? Yeni kayıt oluşturun.

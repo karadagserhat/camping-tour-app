@@ -18,5 +18,6 @@ block content
           label.form__label(for='passwordConfirm') Şifre (Tekrar)
           input#passwordConfirm.form__input(type='password', placeholder='••••••••', required, minlength='6')
 
-        .form__group
-          button.btn.btn--green Kayıt Ol
+        .form__group.form--log--reg
+          button.btn.btn--green.form--login__btn Kayıt Ol
+          a.form--login__reg(href='/login') Hesabınız var mı? Giriş yapın.
